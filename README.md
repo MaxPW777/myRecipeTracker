@@ -45,10 +45,6 @@ L'application sera responsive sur différents appareils, notamment les télépho
 
 ## Idées supplémentaires
 
-### Suggestions basées sur l'IA
-
-- Intégrer une IA pour suggérer des recettes en fonction des préférences de l'utilisateur, des ingrédients disponibles ou des objectifs nutritionnels.
-
 ### Fonctionnalité de recherche
 
 - Mettre en place une fonction de recherche pour trouver des recettes en fonction des ingrédients, des noms ou des catégories.

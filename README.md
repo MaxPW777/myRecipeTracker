@@ -6,17 +6,17 @@ Application de suivi de recettes qui stocke des recettes avec les ingrédients e
 
 ## Stack technologique
 
-### Frontend : React
+### Frontend : Next
 
-Utilisation de React pour son architecture basée sur les composants, permettant la réutilisation des composants d'interface utilisateur.
+Utilisation de Next pour son architecture basée sur les composants, permettant la réutilisation des composants d'interface utilisateur.
 
-### Backend : Rust
+### Backend : Nest
 
-Choix de Rust pour ses performances, sa sécurité et ses fonctionnalités de concurrence. C'est un excellent choix pour gérer de manière efficace la logique backend complexe.
+Choix de Nest pour ses performances, sa sécurité et ses fonctionnalités de concurrence. C'est un excellent choix pour gérer de manière efficace la logique backend complexe.
 
-### Base de données : PostgreSQL
+### Base de données : MongoDB
 
-Utilisation de PostgreSQL pour sa robustesse, son support pour les requêtes complexes et sa compatibilité avec divers types de données, ce qui est idéal pour stocker des recettes, des ingrédients et des métadonnées associées.
+Utilisation de MongoDB pour sa robustesse, son support pour les requêtes complexes et sa compatibilité avec divers types de données, ce qui est idéal pour stocker des recettes, des ingrédients et des métadonnées associées.
 
 ## Fonctionnalités principales
 

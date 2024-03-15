@@ -1,74 +1,74 @@
-# Recipe Tracker
+# Suivi de recettes
 
-## Project Overview
+## Présentation du projet
 
-Recipe tracker application that stores recipes with ingredients, preparation instructions.
+Application de suivi de recettes qui stocke des recettes avec les ingrédients et les instructions de préparation.
 
-## Tech Stack
+## Stack technologique
 
-### Frontend: React
+### Frontend : React
 
-Utilize React for its component-based architecture, enabling reusable UI components.
+Utilisation de React pour son architecture basée sur les composants, permettant la réutilisation des composants d'interface utilisateur.
 
-### Backend: Rust
+### Backend : Rust
 
-Choose Rust for its performance, safety, and concurrency features. It's an excellent choice for handlingcomplex backend logic efficiently.
+Choix de Rust pour ses performances, sa sécurité et ses fonctionnalités de concurrence. C'est un excellent choix pour gérer de manière efficace la logique backend complexe.
 
-### Database: PostgreSQL
+### Base de données : PostgreSQL
 
-Use PostgreSQL for its robustness, support for complex queries, and compatibility with diverse datatypes, which is ideal for storing recipes, ingredients, and related metadata.
+Utilisation de PostgreSQL pour sa robustesse, son support pour les requêtes complexes et sa compatibilité avec divers types de données, ce qui est idéal pour stocker des recettes, des ingrédients et des métadonnées associées.
 
-## Core Features
+## Fonctionnalités principales
 
-### Ingredients and Preparation Instructions
+### Ingrédients et instructions de préparation
 
-- Includes detailed ingredients lists with quantities and units.
-- Stores step-by-step preparation instructions.
+- Comprend des listes détaillées d'ingrédients avec des quantités et des unités.
+- Stocke les instructions de préparation étape par étape.
 
-### Unit Conversion
+### Conversion d'unités
 
-Implements a feature to convert ingredient units (e.g., grams to ounces).
+Implémente une fonctionnalité pour convertir les unités d'ingrédients (par exemple, grammes en onces).
 
-### Recipe Categorization
+### Catégorisation des recettes
 
-- Allows recipes to be categorized by type (e.g., steak, cake, Japanese).
-- Tag or category system for easier searching and organization.
+- Permet de catégoriser les recettes par type (par exemple, steak, gâteau, japonais).
+- Système de tags ou de catégories pour une recherche et une organisation plus faciles.
 
-### User Accounts and Authentication
+### Comptes utilisateur et authentification
 
-- Implement user authentication to save personalized recipes and preferences.
-- Use JWT tokens for secure and stateless authentication.
+- Met en œuvre l'authentification utilisateur pour sauvegarder les recettes personnalisées et les préférences.
+- Utilise des jetons JWT pour une authentification sécurisée et sans état.
 
-### Mobile Responsiveness
+### Adaptabilité mobile
 
-Application will be responsive on various devices, especially mobile phones and tablets, to allow users to access recipes on the go.
+L'application sera responsive sur différents appareils, notamment les téléphones mobiles et les tablettes, pour permettre aux utilisateurs d'accéder aux recettes en déplacement.
 
-## Additional Ideas
+## Idées supplémentaires
 
-### AI-Driven Suggestions
+### Suggestions basées sur l'IA
 
-- Integrate an AI to suggest recipes based on user preferences, ingredients on hand, or nutritional goals.
+- Intégrer une IA pour suggérer des recettes en fonction des préférences de l'utilisateur, des ingrédients disponibles ou des objectifs nutritionnels.
 
-### Search Functionality
+### Fonctionnalité de recherche
 
-- Implement a search feature to find recipes based on ingredients, names, or categories.
-- Consider full-text search for more efficient searching capabilities.
+- Mettre en place une fonction de recherche pour trouver des recettes en fonction des ingrédients, des noms ou des catégories.
+- Envisager une recherche en texte intégral pour des capacités de recherche plus efficaces.
 
-### Nutritional Information
+### Informations nutritionnelles
 
-- Include nutritional information for recipes (calories, macronutrients, etc.).
-- Offer the option to adjust recipes for dietary needs (e.g., vegan, keto).
+- Inclure des informations nutritionnelles pour les recettes (calories, macronutriments, etc.).
+- Offrir la possibilité d'ajuster les recettes en fonction des besoins alimentaires (par exemple, végétalien, kéto).
 
-### Social Features
+### Fonctionnalités sociales
 
-- Allow users to rate and review recipes.
-- Implement sharing features for recipes on social media.
+- Permettre aux utilisateurs de noter et de commenter les recettes.
+- Mettre en place des fonctionnalités de partage pour les recettes sur les médias sociaux.
 
-### Internationalization
+### Internationalisation
 
-- Support multiple languages to cater to a global audience.
-- Consider cultural variations in cooking terms and units.
+- Prendre en charge plusieurs langues pour répondre à un public mondial.
+- Tenir compte des variations culturelles dans les termes et unités de cuisine.
 
-### Offline Access
+### Accès hors ligne
 
-Service workers for offline access to recipes that have been previously loaded.
+Des workers de service pour un accès hors ligne aux recettes qui ont été chargées précédemment.

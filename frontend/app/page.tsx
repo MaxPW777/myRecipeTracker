@@ -1,9 +1,9 @@
-import Image from "next/image";
+import React from 'react'
 
-export default function Home() {
+function page() {
   return (
-    <h1>
-      Recipe Tracker
-    </h1>
-  );
+    <div>page</div>
+  )
 }
+
+export default page

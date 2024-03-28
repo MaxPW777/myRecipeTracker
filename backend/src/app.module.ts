@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
-import { DatabaseModule } from './database.module'; // Importez votre module de base de données
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { UsersModule } from './users/users.module';
+require('dotenv').config();
 
 @Module({
-  imports: [DatabaseModule], // Importez le module de base de données ici
+  imports: [MongooseModule.forRoot(process.env.DB_URL, { connectionName: 'Recipe-Tracker' })
+  ,UsersModule], // Importez le module de base de données ici
   controllers: [AppController],
   providers: [AppService],
 })

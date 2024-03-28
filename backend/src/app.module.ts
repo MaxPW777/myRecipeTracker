@@ -6,7 +6,7 @@ import { UsersModule } from './users/users.module';
 require('dotenv').config();
 
 @Module({
-  imports: [MongooseModule.forRoot(process.env.DB_URL, { connectionName: 'Recipe-Tracker' })
+  imports: [MongooseModule.forRoot(process.env.DB_URL)
   ,UsersModule], // Importez le module de base de données ici
   controllers: [AppController],
   providers: [AppService],

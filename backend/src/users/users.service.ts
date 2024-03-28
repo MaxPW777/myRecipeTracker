@@ -6,7 +6,7 @@ import { Users } from "./schemas/users.schema";
 @Injectable()
 export class UsersService {
     constructor(
-        @InjectModel(Users.name, 'Recipe-Tracker') 
+        @InjectModel(Users.name) 
         private userModel: Model<Users>
     ) {}
 

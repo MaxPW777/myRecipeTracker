@@ -1,6 +1,7 @@
 "use client"
 // If you're using Next.js, ensure to import Link from 'next/link'
 import Link from 'next/link';
+import Image from "next/image";
 import useIsMobile from '../hooks/useIsMobile'
 
 function Navbar() {
@@ -18,15 +19,27 @@ function Navbar() {
     }
 
     return (
-        <nav className='p-2 h-14 w-full '>
-            <ul className='flex items-center justify-between gap-4'>
-                {links.map((route) => {
-                    return (
-                        <li key={route[0]}>
-                            <Link href={route[1]}>{route[0]}</Link>
-                        </li>
-                    )
-                })}
+        <nav className='p-2 h-14 w-full flex items-center'>
+            <ul className='flex w-full items-center justify-between gap-4'>
+                <li>
+                    <Link href={'/myrecipes'}>My Recipes</Link>
+                </li>
+                <li>
+                    <Link href={'/ingredients'}>My Ingredients</Link>
+                </li>
+                <li>
+                    <Link href={'/'}><Image className={'w-12'}
+                                                    width={456} height={547}
+                                                    src={'/logo.png'}
+                                                    alt={'logo'}/></Link>
+                </li>
+                <li>
+                    <Link href={'/settings'}>Settings</Link>
+                </li>
+                <li>
+                    <Link href={'/categories'}>Categories</Link>
+                </li>
+
             </ul>
         </nav>
     )

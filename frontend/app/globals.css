@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply bg-mainbg text-white h-screen w-screen;
+}
+
+@layer components {
+    .main-block {
+        @apply border border-border bg-secondarybg shadow-2xl h-full w-full text-3xl rounded;
+    }
+}

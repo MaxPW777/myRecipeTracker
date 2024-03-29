@@ -1,22 +1,26 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type {Metadata} from "next";
 import "./globals.css";
+import Header from "./components/Header";
+import ReactQueryProvider from "./providers/ReactQueryProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+import {Kufam} from "@/ui/fonts"
 
 export const metadata: Metadata = {
-  title: "Recipe Tracker",
-  description: "by Ludo, Coco and Max",
+    title: "Recipe Tracker",
+    description: "by Ludo, Coco and Max",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+export default function RootLayout({children,}: Readonly<{
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+    return (
+        <ReactQueryProvider>
+            <html lang="en">
+            <body className={Kufam.className}>
+            <Header/>
+            {children}
+            </body>
+            </html>
+        </ReactQueryProvider>
+    );
 }

@@ -14,7 +14,7 @@ function Navbar() {
     ];
 
     if (isMobile) {
-        return (<nav className='rounded-full w-14 h-14 border-2 border-accent '>
+        return (<nav className='rounded-full w-14 h-14 border-2 border-accent ml-auto'>
         </nav>)
     }
 

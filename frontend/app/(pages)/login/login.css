@@ -1,0 +1,7 @@
+input{
+    @apply p-3 border-2 border-accent text-xl rounded bg-transparent;
+}
+
+input:focus{
+    @apply border-amber-600
+}

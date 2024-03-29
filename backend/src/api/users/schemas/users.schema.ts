@@ -9,13 +9,19 @@ import { ObjectId } from "mongoose";
 export class Users {
 
     @Prop()
-    nom: string;
+    username: string;
 
     @Prop()
     email: string;
 
     @Prop()
-    favorite: ObjectId[];
+    favoriteRecipes: ObjectId[];
+
+    @Prop()
+    password: string;
+
+    @Prop()
+    myRecipes: ObjectId[];
 }
 
 export const UsersSchema = SchemaFactory.createForClass(Users);

@@ -1,7 +1,9 @@
 import { ObjectId } from "mongoose";
 
 export class CreateUsersDto {
-    nom: string;
+    username: string;
     email: string;
-    favorite: ObjectId[];
+    favoriteRecipes: ObjectId[];
+    password: string;
+    myRecipes: ObjectId[];
 }

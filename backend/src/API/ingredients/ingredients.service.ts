@@ -15,6 +15,11 @@ export class IngredientsService {
         return ingredients;
     }
 
+    async findById(id: string): Promise<Ingredients> {
+        const ingredient = await this.ingredientModel.findById(id);
+        return ingredient;
+    }
+
     async create(ingredient: Ingredients): Promise<Ingredients> {
         const res = await this.ingredientModel.create(ingredient);
         return res;

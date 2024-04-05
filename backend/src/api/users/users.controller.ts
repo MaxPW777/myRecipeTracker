@@ -16,6 +16,15 @@ export class UsersController {
         return this.usersService.findAll();
     }
 
+    @Get(':id')
+    async getUserById(@Param('id') id: string): Promise<Users> {
+        const isValid = mongoose.Types.ObjectId.isValid(id);
+        if (!isValid) throw new HttpException('Invalid ID', 400);
+        const user = await this.usersService.getUserById(id);
+        if (!user) throw new HttpException('User not found', 404);
+        return user;
+    }
+
     @Post()
     async createUser(
         @Body()

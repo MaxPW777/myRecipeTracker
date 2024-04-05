@@ -16,6 +16,11 @@ export class UsersService {
         return users;
     }
 
+    async getUserById(id: string): Promise<Users> {
+        const user = await this.userModel.findById(id);
+        return user;
+    }
+
     async create(user: Users): Promise<Users> {
         const res = await this.userModel.create(user);
         return res;

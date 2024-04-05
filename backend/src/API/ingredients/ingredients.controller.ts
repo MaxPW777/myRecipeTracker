@@ -2,6 +2,7 @@ import { Body, Controller, Get, Post, Param, HttpException } from "@nestjs/commo
 import { IngredientsService } from "./ingredients.service";
 import { Ingredients } from "./schemas/ingredients.schema";
 import { CreateIngredientsDto } from "./dto/create-ingredients.dto";
+import { mongo } from "mongoose";
 
 
 @Controller('ingredients')
@@ -17,6 +18,10 @@ export class IngredientsController {
     @Get(":id")
     async getIngredientById(@Param('id') id: string): Promise<Ingredients> {
         const ingredient = await this.ingredientsService.findById(id);
+        const isValid = mongo.ObjectId.isValid(id);
+        if (!isValid) {
+            throw new HttpException("Invalid id",400);
+        }
         if (!ingredient) {
             throw new HttpException("Ingredient not found",404);
         }

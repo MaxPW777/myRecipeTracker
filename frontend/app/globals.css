@@ -7,7 +7,7 @@ body {
 }
 
 main {
-    @apply h-[calc(100%-5rem)] w-full justify-center items-center gap-4 flex p-10
+    @apply h-[calc(100%-5rem)] w-full  p-10
 }
 
 @layer components {

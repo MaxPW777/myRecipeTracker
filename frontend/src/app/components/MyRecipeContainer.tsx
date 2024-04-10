@@ -1,4 +1,4 @@
-import Recipe from "@/app/types/Recipe";
+import Recipe from "@/src/types/Recipe";
 import React from "react";
 
 const recipes: Recipe[] | null = null

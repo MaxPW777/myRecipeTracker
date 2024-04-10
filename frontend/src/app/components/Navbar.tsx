@@ -2,12 +2,12 @@
 // If you're using Next.js, ensure to import Link from 'next/link'
 import Link from 'next/link';
 import Image from "next/image";
-import useIsMobile from '../hooks/useIsMobile'
+import useIsMobile from '@/src/hooks/useIsMobile'
 
 function Navbar() {
     const isMobile = useIsMobile();
     const links = [
-        ['My Recipes', '/myrecipes'],
+        ['My Recipes', '/recipes'],
         ['My Ingredients', '/ingredients'],
         ['Settings', '/settings'],
         ['Categories', '/categories'],
@@ -22,7 +22,7 @@ function Navbar() {
         <nav className='p-2 h-14 w-full flex items-center'>
             <ul className='flex w-full items-center justify-between gap-4'>
                 <li>
-                    <Link href={'/myrecipes'}>My Recipes</Link>
+                    <Link href={'/recipes'}>My Recipes</Link>
                 </li>
                 <li>
                     <Link href={'/ingredients'}>My Ingredients</Link>

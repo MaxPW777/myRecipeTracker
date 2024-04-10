@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import Header from "./components/Header";
-import ReactQueryProvider from "./providers/ReactQueryProvider";
+import ReactQueryProvider from "@/src/providers/ReactQueryProvider";
 
 import {Kufam} from "@/ui/fonts"
 

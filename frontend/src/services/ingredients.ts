@@ -3,9 +3,9 @@ import { useQuery, useMutation, useQueryClient } from 'react-query';
 
 const BASE_URL = 'http://localhost:3000/ingredients';
 
-export const useGetAllIngredients = () => {
+export const useGetAllIngredientsQuery = () => {
     return useQuery({
-        queryKey: 'ingredients',
+        queryKey: ['ingredients'],
         queryFn: getAllIngredients,
     })
 }
@@ -19,7 +19,7 @@ const getAllIngredients = async () : Promise<Ingredients[]> => {
     }
 };
 
-export const useGetIngredientById = (id: string) => {
+export const useGetIngredientByIdQuery = (id: string) => {
     return useQuery({
         queryKey: ['ingredient', id],
         queryFn: () => getIngredientById(id),
@@ -35,7 +35,7 @@ const getIngredientById = async (id: string) : Promise<Ingredients> => {
     }
 }
 
-export const useCreateIngredient = ( ingredientData : Ingredients) => {
+export const useCreateIngredientMutation = ( ingredientData : Ingredients) => {
     const queryClient = useQueryClient();
     return useMutation(() => createIngredient(ingredientData), {
         onSuccess: () => {

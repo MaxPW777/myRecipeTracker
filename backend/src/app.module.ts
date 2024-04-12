@@ -8,8 +8,12 @@ import { IngredientsModule } from './API/ingredients/ingredients.module';
 require('dotenv').config();
 
 @Module({
-  imports: [MongooseModule.forRoot(process.env.DB_URL)
-  ,UsersModule,RecipesModule,IngredientsModule], // Importez le module de base de données ici
+  imports: [
+    MongooseModule.forRoot(process.env.DB_URL),
+    UsersModule,
+    RecipesModule,
+    IngredientsModule,
+  ], // Importez le module de base de données ici
   controllers: [AppController],
   providers: [AppService],
 })

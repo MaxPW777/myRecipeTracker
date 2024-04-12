@@ -1,7 +1,7 @@
 import { Ingredients } from '../../../backend/src/api/ingredients/schemas/ingredients.schema';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 
-
+const BASE_URL = 'http://localhost:3000/ingredients';
 
 export const useGetAllIngredients = () => {
     return useQuery({
@@ -10,9 +10,9 @@ export const useGetAllIngredients = () => {
     })
 }
 
-const getAllIngredients = async () => {
+const getAllIngredients = async () : Promise<Ingredients[]> => {
     try {
-        const response = await fetch('http://localhost:3000/ingredients');
+        const response = await fetch(BASE_URL);
         return response.json();
     } catch (error) {
         throw error;
@@ -26,9 +26,9 @@ export const useGetIngredientById = (id: string) => {
     });
 };
 
-const getIngredientById = async (id: string) => {
+const getIngredientById = async (id: string) : Promise<Ingredients> => {
     try{
-        const response = await fetch(`http://localhost:3000/ingredients/${id}`);
+        const response = await fetch(`${BASE_URL}/${id}`);
         return response.json();
     } catch (error) {
         throw error;
@@ -44,9 +44,9 @@ export const useCreateIngredient = ( ingredientData : Ingredients) => {
     });
 }
 
-const createIngredient = async (ingredient: Ingredients) => {
+const createIngredient = async (ingredient: Ingredients) : Promise<Ingredients> => {
     try {
-        const response = await fetch('http://localhost:3000/ingredients', {
+        const response = await fetch(BASE_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

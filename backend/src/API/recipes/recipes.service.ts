@@ -15,6 +15,10 @@ export class RecipesService {
         return recipes;
     }
 
+    async findById(id: string): Promise<Recipes> {
+        const recipe = await this.recipeModel.findById(id);
+        return recipe;
+    }
     async create(recipe: Recipes): Promise<Recipes> {
         const res = await this.recipeModel.create(recipe);
         return res;

@@ -1,4 +1,4 @@
-import { Recipes } from '../../../../backend/src/api/recipes/schemas/recipes.schema';
+import { Recipes } from '../../../backend/src/api/recipes/schemas/recipes.schema';
 
 const createRecipe = async (recipe : Recipes) => {
     const response = await fetch('http://localhost:3000/recipes', {

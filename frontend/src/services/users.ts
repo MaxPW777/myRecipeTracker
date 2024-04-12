@@ -1,4 +1,4 @@
-import { Users } from '../../../../backend/src/api/users/schemas/users.schema';
+import { Users } from '../../../backend/src/api/users/schemas/users.schema';
 
 const getAllUsers = async () => {
     const response = await fetch('http://localhost:3000/users');

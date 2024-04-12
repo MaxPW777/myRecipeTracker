@@ -1,4 +1,4 @@
-import { Ingredients } from '../../../../backend/src/api/ingredients/schemas/ingredients.schema';
+import { Ingredients } from '../../../backend/src/api/ingredients/schemas/ingredients.schema';
 
 
 const getAllIngredients = async () => {

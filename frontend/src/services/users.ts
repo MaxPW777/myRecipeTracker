@@ -1,7 +1,7 @@
 import { Users } from '../../../backend/src/api/users/schemas/users.schema';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 
-const BASE_URL = 'http://localhost:3000/users';
+const BASE_URL = 'http://localhost:4000/users';
 
 export const useGetAllUsersQuery = () => {
     return useQuery({

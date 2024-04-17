@@ -1,5 +1,6 @@
 import React from 'react'
 import MyRecipeContainer from './components/MyRecipeContainer'
+import AllUsers from './components/testLudo/AllUsers'
 
 function HomePage() {
     return (

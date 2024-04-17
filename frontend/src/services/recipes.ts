@@ -1,7 +1,7 @@
 import { Recipes } from '../../../backend/src/api/recipes/schemas/recipes.schema';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 
-const BASE_URL = 'http://localhost:3000/recipes';
+const BASE_URL = 'http://localhost:4000/recipes';
 
 export const useGetAllRecipesMutation = ( recipeData : Recipes ) => {
     const queryClient = useQueryClient();

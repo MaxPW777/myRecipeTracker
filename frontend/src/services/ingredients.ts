@@ -1,7 +1,7 @@
 import { Ingredients } from '../../../backend/src/api/ingredients/schemas/ingredients.schema';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 
-const BASE_URL = 'http://localhost:3000/ingredients';
+const BASE_URL = 'http://localhost:4000/ingredients';
 
 export const useGetAllIngredientsQuery = () => {
     return useQuery({

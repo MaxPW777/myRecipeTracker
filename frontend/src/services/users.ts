@@ -1,42 +1,42 @@
-import { Users } from '../../../backend/src/api/users/schemas/users.schema';
-import { useQuery, useMutation, useQueryClient } from 'react-query';
+import {Users} from '../../../backend/src/api/users/schemas/users.schema';
+import {useMutation, useQuery, useQueryClient} from 'react-query';
 
 const BASE_URL = 'http://localhost:4000/users';
 
 export const useGetAllUsersQuery = () => {
     return useQuery({
-        queryKey : ['users'],
-        queryFn : getAllUsers,
+        queryKey: ['users'],
+        queryFn: getAllUsers,
     })
 }
 
-const getAllUsers = async () : Promise<Users[]> => {
+const getAllUsers = async (): Promise<Users[]> => {
     const response = await fetch(BASE_URL);
     return response.json();
 };
 
-export const useGetUserByIdQuery = (id : string) => {
+export const useGetUserByIdQuery = (id: string) => {
     return useQuery({
-        queryKey : ['users', id],
-        queryFn : () => getUserById(id),
+        queryKey: ['users', id],
+        queryFn: () => getUserById(id),
     })
 }
 
-const getUserById = async (id: string) : Promise<Users> => {
+const getUserById = async (id: string): Promise<Users> => {
     const response = await fetch(`${BASE_URL}/${id}`);
     return response.json();
 }
 
-export const useCreateUserMutation = (userData : Users) => {
+export const useCreateUserMutation = () => {
     const queryClient = useQueryClient();
-    return useMutation(() => createUser(userData), {
-        onSuccess : () => {
+    return useMutation(createUser, {
+        onSuccess: () => {
             queryClient.invalidateQueries('users')
         }
     })
 }
 
-const createUser = async (user : Users) : Promise<Users> => {
+const createUser = async (user: Users): Promise<Users> => {
     const response = await fetch(BASE_URL, {
         method: 'POST',
         headers: {
@@ -47,16 +47,19 @@ const createUser = async (user : Users) : Promise<Users> => {
     return response.json();
 };
 
-export const useUpdateUserMutation = (id : string, userdata : Users) => {
+export const useUpdateUserMutation = () => {
     const queryClient = useQueryClient();
-    return useMutation(() => updateUser(id, userdata), {
-        onSuccess : () => {
+    return useMutation(updateUser, {
+        onSuccess: () => {
             queryClient.invalidateQueries('users')
         }
     })
 }
 
-const updateUser = async (id: string, user: Users) : Promise<Users> => {
+const updateUser = async ({id, user}: {
+    id: string,
+    user: Users
+}): Promise<Users> => {
     const response = await fetch(`${BASE_URL}/${id}`, {
         method: 'PATCH',
         headers: {
@@ -67,16 +70,16 @@ const updateUser = async (id: string, user: Users) : Promise<Users> => {
     return response.json();
 }
 
-export const useDeleteUserMutation = ( id : string ) => {
+export const useDeleteUserMutation = () => {
     const queryClient = useQueryClient();
-    return useMutation(() => deleteUser(id), {
-        onSuccess : () => {
+    return useMutation( deleteUser, {
+        onSuccess: () => {
             queryClient.invalidateQueries('users')
         }
     })
 }
 
-const deleteUser = async (id: string) : Promise<Users>=> {
+const deleteUser = async (id: string): Promise<Users> => {
     const response = await fetch(`${BASE_URL}/${id}`, {
         method: 'DELETE',
     });

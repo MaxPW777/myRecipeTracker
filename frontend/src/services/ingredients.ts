@@ -35,9 +35,9 @@ const getIngredientById = async (id: string) : Promise<Ingredients> => {
     }
 }
 
-export const useCreateIngredientMutation = ( ingredientData : Ingredients) => {
+export const useCreateIngredientMutation = ( ) => {
     const queryClient = useQueryClient();
-    return useMutation(() => createIngredient(ingredientData), {
+    return useMutation(createIngredient, {
         onSuccess: () => {
             queryClient.invalidateQueries('ingredients');
         }

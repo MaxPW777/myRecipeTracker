@@ -3,9 +3,9 @@ import { useQuery, useMutation, useQueryClient } from 'react-query';
 
 const BASE_URL = 'http://localhost:4000/recipes';
 
-export const useGetAllRecipesMutation = ( recipeData : Recipes ) => {
+export const useGetAllRecipesMutation = ( ) => {
     const queryClient = useQueryClient();
-    return useMutation(() => createRecipe(recipeData), {
+    return useMutation(createRecipe, {
         onSuccess: () => {
             queryClient.invalidateQueries('recipes');
         }

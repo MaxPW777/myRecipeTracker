@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PostUser() {
+function PostUsers() {
   return (
     <>
         <h1>PostUser</h1>
@@ -15,4 +15,4 @@ function PostUser() {
   )
 }
 
-export default PostUser
+export default PostUsers

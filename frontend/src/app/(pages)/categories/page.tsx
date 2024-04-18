@@ -1,5 +1,5 @@
-import AllUsers from "@/src/app/components/AllUsers";
-import PostUsers from "@/src/app/components/PostUser";
+import AllUsers from "@/src/app/(pages)/categories/components/AllUsers";
+import PostUsers from "@/src/app/(pages)/categories/components/PostUsers";
 
 function CategoryPage() {
     return (

@@ -5,8 +5,10 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { RecipesSchema } from './schemas/recipes.schema';
 
 @Module({
-    imports: [MongooseModule.forFeature([{ name: 'Recipes', schema: RecipesSchema }])],
-    controllers: [RecipesController],
-    providers: [RecipesService],
+  imports: [
+    MongooseModule.forFeature([{ name: 'Recipes', schema: RecipesSchema }]),
+  ],
+  controllers: [RecipesController],
+  providers: [RecipesService],
 })
 export class RecipesModule {}

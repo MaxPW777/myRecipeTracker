@@ -1,5 +1,5 @@
 export class CreateIngredientsDto {
-    name: string;
-    category: string;
-    image: string;
+  name: string;
+  category: string;
+  image: string;
 }

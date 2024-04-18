@@ -9,7 +9,7 @@ interface RecipeItemProps {
 
 function RecipeItem({ImageSource, RecipeTitle, RecipeID}: RecipeItemProps) {
     return (
-        <Link href={`categories/${RecipeID}}`}
+        <Link href={`recipes/${RecipeID}}`}
               className={'w-[49%] md:w-52 md:px-auto h-fit rounded border border-accent flex justify-center items-end relative'}>
             <Image className={'relative rounded'} alt={RecipeTitle + " Image"}
                    src={ImageSource} width={500} height={500}/>

@@ -1,21 +1,26 @@
-import Recipe from "@/app/types/Recipe";
+"use client"
+import Recipe from "@/src/types/Recipe";
 import React from "react";
+import {useGetRecipeByIdQuery} from "@/src/services/recipes";
 
 const recipes: Recipe[] | null = null
 
-function myRecipeContainer() {
+function MyRecipeContainer() {
+    const {data} = useGetRecipeByIdQuery('zipette')
+    const [recipes, setRecipes] = React.useState<Recipe[] | null>(null)
+
     return (
         <div className={'main-block'}>
             <p className={'m-5'}>My Recipes</p>
             {
-                recipes ?
+                data ?
                     (<div className={'flex flex-col'}>
-                            {recipes.map((recipe) => (
+                            {data.map((recipe,index) => (
                                 <div
                                     className={'w-full h-20 flex flex-col justify-center items-end border-y-2 border-accent text-2xl'}
-                                    key={recipe.id}>
+                                    key={index}>
                                     <h1>{recipe.title}</h1>
-                                    <h3 className={'text-sm'}>{recipe.Ingredients.length}</h3>
+                                    <h3 className={'text-sm'}>{recipe.ingredients.length}</h3>
                                 </div>
                             ))}
                         </div>
@@ -25,4 +30,4 @@ function myRecipeContainer() {
     )
 }
 
-export default myRecipeContainer;
+export default MyRecipeContainer;

@@ -6,8 +6,15 @@ body {
     @apply bg-mainbg text-white h-screen w-screen;
 }
 
+main {
+    @apply h-[calc(100%-5rem)] w-full  p-10
+}
+
 @layer components {
     .main-block {
         @apply border border-border bg-secondarybg shadow-2xl h-full w-full text-3xl rounded;
+    }
+    .abs-center {
+        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
     }
 }

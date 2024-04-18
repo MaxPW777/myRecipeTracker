@@ -1,9 +1,9 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import Header from "./components/Header";
-import ReactQueryProvider from "./providers/ReactQueryProvider";
+import ReactQueryProvider from "@/src/providers/ReactQueryProvider";
 
-import {Kufam} from "@/ui/fonts"
+import {Kufam} from "@/src/ui/fonts"
 import { QueryClientProvider } from "react-query";
 
 export const metadata: Metadata = {

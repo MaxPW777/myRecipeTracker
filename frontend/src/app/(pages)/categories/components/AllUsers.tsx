@@ -13,8 +13,8 @@ function AllUsers() {
         <div>
             <h1>All Users</h1>
             <ul>
-                {users && users.map(user => (
-                    <div>
+                {users && users.map((user,index) => (
+                    <div key={index}>
                         {user.username} - {user.email}
                     </div>
                 ))}

@@ -30,7 +30,7 @@ export const useGetRecipeByIdQuery = (id: string) => {
     });
 };
 
-const getRecipeById = async (id: string) : Promise<Recipes> => {
+const getRecipeById = async (id: string) : Promise<Recipes[]> => {
     const response = await fetch(`${BASE_URL}/${id}`);
     return response.json();
 }

@@ -1,4 +1,4 @@
-import { Recipes } from '../../../backend/src/api/recipes/schemas/recipes.schema';
+import Recipe from "@/src/types/Recipe";
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 
 const BASE_URL = 'http://localhost:4000/recipes';
@@ -12,7 +12,7 @@ export const useGetAllRecipesMutation = ( ) => {
     });
 }
 
-const createRecipe = async (recipe : Recipes) : Promise<Recipes> => {
+const createRecipe = async (recipe : Recipe) : Promise<Recipe> => {
     const response = await fetch(BASE_URL, {
         method: 'POST',
         headers: {
@@ -30,7 +30,7 @@ export const useGetRecipeByIdQuery = (id: string) => {
     });
 };
 
-const getRecipeById = async (id: string) : Promise<Recipes[]> => {
+const getRecipeById = async (id: string) : Promise<Recipe[]> => {
     const response = await fetch(`${BASE_URL}/${id}`);
     return response.json();
 }

@@ -20,7 +20,7 @@ function MyRecipeContainer() {
                                     className={'w-full h-20 flex flex-col justify-center items-end border-y-2 border-accent text-2xl'}
                                     key={index}>
                                     <h1>{recipe.title}</h1>
-                                    <h3 className={'text-sm'}>{recipe.ingredients.length}</h3>
+                                    <h3 className={'text-sm'}>{recipe.Ingredients.length}</h3>
                                 </div>
                             ))}
                         </div>

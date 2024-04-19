@@ -1,5 +1,11 @@
-import { Ingredients } from '../../../backend/src/api/ingredients/schemas/ingredients.schema';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
+
+interface Ingredients {
+    _id: string;
+    name: string;
+    quantity: number;
+    optional: boolean;
+}
 
 const BASE_URL = 'http://localhost:4000/ingredients';
 

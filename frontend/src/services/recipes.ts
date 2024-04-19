@@ -25,12 +25,12 @@ const createRecipe = async (recipe : Recipe) : Promise<Recipe> => {
 
 export const useGetRecipeByIdQuery = (id: string) => {
     return useQuery({
-        queryKey: ['recipe', id],
+        queryKey: ['recipes', id],
         queryFn: () => getRecipeById(id),
     });
 };
 
-const getRecipeById = async (id: string) : Promise<Recipe[]> => {
+const getRecipeById = async (id: string) : Promise<Recipe> => {
     const response = await fetch(`${BASE_URL}/${id}`);
     return response.json();
 }

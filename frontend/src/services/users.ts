@@ -1,5 +1,13 @@
-import {Users} from '../../../backend/src/api/users/schemas/users.schema';
 import {useMutation, useQuery, useQueryClient} from 'react-query';
+
+interface Users {
+    _id: string;
+    username: string;
+    email: string;
+    password: string;
+    favoriteRecipes: string[];
+    myRecipes: string[];
+}
 
 const BASE_URL = 'http://localhost:4000/users';
 

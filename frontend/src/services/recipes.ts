@@ -1,4 +1,4 @@
-import Recipe from "@/src/types/Recipe";
+import Recipe from '@/src/types/Recipe';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 
 const BASE_URL = 'http://localhost:4000/recipes';

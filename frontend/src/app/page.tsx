@@ -1,6 +1,6 @@
+"use client"
 import React from 'react'
-import MyRecipeContainer from './components/MyRecipeContainer'
-
+import RecipeList from "./(pages)/recipes/components/RecipeList";
 function HomePage() {
     return (
         <main className={'justify-center items-center gap-4 flex'}>
@@ -9,7 +9,7 @@ function HomePage() {
                 <div className={'h-full w-full border rounded'}>
                 </div>
             </div>
-            <MyRecipeContainer/>
+            <RecipeList data={{message : "test" , statusCode:2304}}/>
         </main>
     )
 }

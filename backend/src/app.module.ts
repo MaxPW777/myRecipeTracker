@@ -15,7 +15,7 @@ require('dotenv').config();
     RecipesModule,
     IngredientsModule,
     AuthModule,
-  ], // Importez le module de base de données ici
+  ], 
   controllers: [AppController],
   providers: [AppService],
 })

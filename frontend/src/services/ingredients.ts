@@ -1,3 +1,4 @@
+import Ingredient from '../types/Ingredient'; ;
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 
 interface Ingredients {
@@ -16,7 +17,7 @@ export const useGetAllIngredientsQuery = () => {
     })
 }
 
-const getAllIngredients = async () : Promise<Ingredients[]> => {
+const getAllIngredients = async () : Promise<Ingredient[]> => {
     try {
         const response = await fetch(BASE_URL);
         return response.json();
@@ -32,7 +33,7 @@ export const useGetIngredientByIdQuery = (id: string) => {
     });
 };
 
-const getIngredientById = async (id: string) : Promise<Ingredients> => {
+const getIngredientById = async (id: string) : Promise<Ingredient> => {
     try{
         const response = await fetch(`${BASE_URL}/${id}`);
         return response.json();
@@ -50,7 +51,7 @@ export const useCreateIngredientMutation = ( ) => {
     });
 }
 
-const createIngredient = async (ingredient: Ingredients) : Promise<Ingredients> => {
+const createIngredient = async (ingredient: Ingredient) : Promise<Ingredient> => {
     try {
         const response = await fetch(BASE_URL, {
             method: 'POST',

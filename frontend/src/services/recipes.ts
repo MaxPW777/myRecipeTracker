@@ -3,7 +3,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query';
 
 const BASE_URL = 'http://localhost:4000/recipes';
 
-export const useGetAllRecipesMutation = ( ) => {
+export const useCreateRecipeMutation = ( ) => {
     const queryClient = useQueryClient();
     return useMutation(createRecipe, {
         onSuccess: () => {
@@ -11,6 +11,8 @@ export const useGetAllRecipesMutation = ( ) => {
         }
     });
 }
+
+
 
 const createRecipe = async (recipe : Recipe) : Promise<Recipe> => {
     const response = await fetch(BASE_URL, {
@@ -25,12 +27,27 @@ const createRecipe = async (recipe : Recipe) : Promise<Recipe> => {
 
 export const useGetRecipeByIdQuery = (id: string) => {
     return useQuery({
-        queryKey: ['recipe', id],
+        queryKey: ['recipes', id],
         queryFn: () => getRecipeById(id),
     });
 };
 
-const getRecipeById = async (id: string) : Promise<Recipe[]> => {
+const getRecipeById = async (id: string) : Promise<Recipe> => {
     const response = await fetch(`${BASE_URL}/${id}`);
+    return response.json();
+}
+
+export const useGetRecipesByAuthorQuery = (authorid: string) => {
+    return useQuery({
+        queryKey: ['recipes', authorid],
+        queryFn: () => getRecipesByAuthor(authorid),
+    });
+
+}
+
+
+
+const getRecipesByAuthor = async (authorid: string) : Promise<Recipe[] | {message : string, statusCode : number}> => {
+    const response = await fetch(`${BASE_URL}/author/${authorid}`);
     return response.json();
 }

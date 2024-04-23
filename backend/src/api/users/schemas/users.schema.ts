@@ -9,13 +9,13 @@ export class Users {
   @Prop()
   username: string;
 
-  @Prop()
+  @Prop({ required: true })
   email: string;
 
   @Prop()
   favoriteRecipes: ObjectId[];
 
-  @Prop()
+  @Prop({ required: true })
   password: string;
 
   @Prop()

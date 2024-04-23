@@ -1,6 +1,13 @@
 import Ingredient from '../types/Ingredient'; ;
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 
+interface Ingredients {
+    _id: string;
+    name: string;
+    quantity: number;
+    optional: boolean;
+}
+
 const BASE_URL = 'http://localhost:4000/ingredients';
 
 export const useGetAllIngredientsQuery = () => {

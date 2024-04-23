@@ -1,6 +1,15 @@
 import User from  '../types/User';
 import {useMutation, useQuery, useQueryClient} from 'react-query';
 
+interface Users {
+    _id: string;
+    username: string;
+    email: string;
+    password: string;
+    favoriteRecipes: string[];
+    myRecipes: string[];
+}
+
 const BASE_URL = 'http://localhost:4000/users';
 
 export const useGetAllUsersQuery = () => {

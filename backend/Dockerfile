@@ -1,14 +1,12 @@
-FROM node:21 AS development
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+FROM node:21-alpine
+LABEL authors="maxpi"
 
-FROM node:21 AS production
-ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
-WORKDIR /usr/src/app
-COPY --from=development /usr/src/app ./
-EXPOSE 3001
-CMD ["node", "dist/main"]
+WORKDIR /src
+
+# Install dependencies based on the preferred package manager
+COPY package.json package-lock.json* ./
+RUN npm ci
+
+COPY . .
+
+CMD ["npm","run","start:dev"]

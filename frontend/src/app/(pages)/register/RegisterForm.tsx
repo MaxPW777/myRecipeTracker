@@ -15,10 +15,10 @@ function RegisterForm() {
 
     const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault(); // Empêche le formulaire de se soumettre normalement
-
         try {
             await createUserMutation.mutateAsync(user); // Utilisez directement l'objet utilisateur
-            console.log('Utilisateur créé avec succès!');
+            alert('Utilisateur créé avec succès!'); // Affichez une alerte pour indiquer que l'utilisateur a été créé avec succès
+            window.location.href = '/'; // Redirigez l'utilisateur vers la page d'accueil
         } catch (error) {
             console.error('Une erreur s\'est produite lors de la création de l\'utilisateur:', error);
         }
@@ -40,9 +40,9 @@ function RegisterForm() {
     return (
         <form className={'flex'} onSubmit={onSubmit}>
             <div className={'flex flex-col gap-4'}>
-                <input name="username" placeholder={'Username'} type="text" value={user.username} onChange={handleUsernameChange} />
-                <input name="email" placeholder={'Email'} type="email" value={user.email} onChange={handleEmailChange} />
-                <input name="password" placeholder={'Password'} type="password" value={user.password} onChange={handlePasswordChange} />
+                <input name="username" placeholder={'Username'} type="text" onChange={handleUsernameChange} />
+                <input name="email" placeholder={'Email'} type="email" onChange={handleEmailChange} />
+                <input name="password" placeholder={'Password'} type="password" onChange={handlePasswordChange} />
                 <input className={'w-min'} type="submit" />
             </div>
         </form>

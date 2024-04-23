@@ -12,6 +12,8 @@ export const useCreateRecipeMutation = ( ) => {
     });
 }
 
+
+
 const createRecipe = async (recipe : Recipe) : Promise<Recipe> => {
     const response = await fetch(BASE_URL, {
         method: 'POST',
@@ -43,7 +45,9 @@ export const useGetRecipesByAuthorQuery = (authorid: string) => {
 
 }
 
-const getRecipesByAuthor = async (authorid: string) : Promise<Recipe[]> => {
+
+
+const getRecipesByAuthor = async (authorid: string) : Promise<Recipe[] | {message : string, statusCode : number}> => {
     const response = await fetch(`${BASE_URL}/author/${authorid}`);
     return response.json();
 }

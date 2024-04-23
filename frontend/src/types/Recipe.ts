@@ -1,5 +1,5 @@
 export default interface IRecipe {
-  id: string;
+  _id: string;
   title: string;
   author: string;
   ingredients: {

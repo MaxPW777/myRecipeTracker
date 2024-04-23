@@ -27,6 +27,20 @@ export class RecipesController {
     }
     return recipe;
   }
+  @Get('/author/:authorid')
+  async getRecipesByAuthor(
+    @Param('authorid') authorid: string,
+  ): Promise<Recipes[]> {
+    const isValid = mongo.ObjectId.isValid(authorid);
+    if (!isValid) {
+      throw new HttpException('Invalid id', 400);
+    }
+    const recipes = await this.recipesService.findByAuthor(authorid);
+    if (!recipes) {
+      throw new HttpException('Recipes not found', 404);
+    }
+    return recipes;
+  }
 
   @Post()
   async createRecipe(

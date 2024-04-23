@@ -3,7 +3,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query';
 
 const BASE_URL = 'http://localhost:4000/recipes';
 
-export const useGetAllRecipesMutation = ( ) => {
+export const useCreateRecipeMutation = ( ) => {
     const queryClient = useQueryClient();
     return useMutation(createRecipe, {
         onSuccess: () => {
@@ -32,5 +32,18 @@ export const useGetRecipeByIdQuery = (id: string) => {
 
 const getRecipeById = async (id: string) : Promise<Recipe> => {
     const response = await fetch(`${BASE_URL}/${id}`);
+    return response.json();
+}
+
+export const useGetRecipesByAuthorQuery = (authorid: string) => {
+    return useQuery({
+        queryKey: ['recipes', authorid],
+        queryFn: () => getRecipesByAuthor(authorid),
+    });
+
+}
+
+const getRecipesByAuthor = async (authorid: string) : Promise<Recipe[]> => {
+    const response = await fetch(`${BASE_URL}/author/${authorid}`);
     return response.json();
 }

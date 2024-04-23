@@ -11,6 +11,11 @@ export class UsersService {
     private userModel: Model<Users>,
   ) {}
 
+  async findOne(username: string): Promise<Users | undefined> {
+    const user = await this.userModel.findOne({ username });
+    return user;
+  }
+
   async findAll(): Promise<Users[]> {
     const users = await this.userModel.find();
     return users;
@@ -40,4 +45,5 @@ export class UsersService {
     const res = await this.userModel.findByIdAndDelete(id);
     return res;
   }
+  
 }

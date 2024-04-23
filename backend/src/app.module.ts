@@ -3,8 +3,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './api/users/users.module';
-import { RecipesModule } from './api/recipes/recipes.module';
-import { IngredientsModule } from './api/ingredients/ingredients.module';
+import { RecipesModule } from './API/recipes/recipes.module';
+import { IngredientsModule } from './API/ingredients/ingredients.module';
+import { AuthModule } from './auth/auth.module';
 require('dotenv').config();
 
 @Module({
@@ -13,6 +14,7 @@ require('dotenv').config();
     UsersModule,
     RecipesModule,
     IngredientsModule,
+    AuthModule,
   ], // Importez le module de base de données ici
   controllers: [AppController],
   providers: [AppService],

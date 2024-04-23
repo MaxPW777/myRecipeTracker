@@ -1,4 +1,4 @@
-import {Users} from '../../../backend/src/api/users/schemas/users.schema';
+import User from  '../types/User';
 import {useMutation, useQuery, useQueryClient} from 'react-query';
 
 const BASE_URL = 'http://localhost:4000/users';
@@ -10,7 +10,7 @@ export const useGetAllUsersQuery = () => {
     })
 }
 
-const getAllUsers = async (): Promise<Users[]> => {
+const getAllUsers = async (): Promise<User[]> => {
     const response = await fetch(BASE_URL);
     return response.json();
 };
@@ -22,7 +22,7 @@ export const useGetUserByIdQuery = (id: string) => {
     })
 }
 
-const getUserById = async (id: string): Promise<Users> => {
+const getUserById = async (id: string): Promise<User> => {
     const response = await fetch(`${BASE_URL}/${id}`);
     return response.json();
 }
@@ -36,7 +36,7 @@ export const useCreateUserMutation = () => {
     })
 }
 
-const createUser = async (user: Users): Promise<Users> => {
+const createUser = async (user: User): Promise<User> => {
     const response = await fetch(BASE_URL, {
         method: 'POST',
         headers: {
@@ -58,8 +58,8 @@ export const useUpdateUserMutation = () => {
 
 const updateUser = async ({id, user}: {
     id: string,
-    user: Users
-}): Promise<Users> => {
+    user: User
+}): Promise<User> => {
     const response = await fetch(`${BASE_URL}/${id}`, {
         method: 'PATCH',
         headers: {
@@ -79,7 +79,7 @@ export const useDeleteUserMutation = () => {
     })
 }
 
-const deleteUser = async (id: string): Promise<Users> => {
+const deleteUser = async (id: string): Promise<User> => {
     const response = await fetch(`${BASE_URL}/${id}`, {
         method: 'DELETE',
     });

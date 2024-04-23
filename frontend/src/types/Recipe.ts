@@ -1,9 +1,11 @@
+import Ingredient from "./Ingredient";
+
 export default interface IRecipe {
   id: string;
   title: string;
   author: string;
   ingredients: {
-    ingredientId: string;
+    ingredient: Ingredient;
     quantity: string;
     optional?: string;
   }[];

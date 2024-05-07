@@ -33,6 +33,15 @@ export class IngredientsController {
     return ingredient;
   }
 
+  @Get('category/:category')
+  async getIngredientsByCategory(@Param('category') category: string): Promise<Ingredients[]> {
+    const ingredients = await this.ingredientsService.findByCategory(category);
+    if (!ingredients) {
+      throw new HttpException('Category not found', 404);
+    }
+    return ingredients;
+  }
+
   @Post()
   async createIngredient(
     @Body()

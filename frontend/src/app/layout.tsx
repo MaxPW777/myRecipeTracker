@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import ReactQueryProvider from "@/src/providers/ReactQueryProvider";
 
 import {Kufam} from "@/src/ui/fonts"
-import { QueryClientProvider } from "react-query";
 
 export const metadata: Metadata = {
     title: "Recipe Tracker",

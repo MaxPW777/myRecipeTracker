@@ -1,13 +1,6 @@
 import Ingredient from '../types/Ingredient'; ;
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 
-interface Ingredients {
-    _id: string;
-    name: string;
-    quantity: number;
-    optional: boolean;
-}
-
 const BASE_URL = 'http://localhost:4000/ingredients';
 
 export const useGetAllIngredientsQuery = () => {
@@ -41,6 +34,22 @@ const getIngredientById = async (id: string) : Promise<Ingredient> => {
         throw error;
     }
 }
+
+export const useGetIngredientsByCategoryQuery = (category: string) => {
+    return useQuery({
+        queryKey: ['ingredients', category],
+        queryFn: () => getIngredientsByCategory(category),
+    });
+};
+
+const getIngredientsByCategory = async (category: string) : Promise<Ingredient[]> => {
+    try {
+        const response = await fetch(`${BASE_URL}/category/${category}`);
+        return response.json();
+    } catch (error) {
+        throw error;
+    }
+};
 
 export const useCreateIngredientMutation = ( ) => {
     const queryClient = useQueryClient();

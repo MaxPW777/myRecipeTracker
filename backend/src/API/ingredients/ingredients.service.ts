@@ -20,6 +20,11 @@ export class IngredientsService {
     return ingredient;
   }
 
+  async findByCategory(category: string): Promise<Ingredients[]> {
+    const ingredients = await this.ingredientModel.find({ category });
+    return ingredients;
+  }
+
   async create(ingredient: Ingredients): Promise<Ingredients> {
     const res = await this.ingredientModel.create(ingredient);
     return res;

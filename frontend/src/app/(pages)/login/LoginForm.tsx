@@ -5,21 +5,18 @@ import {useLoginMutation} from "@/src/services/authentication";
 function LoginForm() {
     const loginMutation = useLoginMutation()
 
-    const onSubmit = () => {
-        loginUser({username: "admin", password: "admin"}).then(() => {
-            console.log("logged")
-        })
-        console.log("logged")
+
+    const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        const form = e.currentTarget as HTMLFormElement
+        const username = form.username.value
+        const password = form.password.value
+        loginUser({username, password}).then(r => console.log(r))
     }
 
-    const loginUser = async ({username, password}: {
-        username: string,
-        password: string
-    }) => {
-        await loginMutation.mutateAsync({
-            username, password
-        })
-    };
+    const loginUser = async ({username, password}: { username: string, password: string }) => {
+        loginMutation.mutate({username, password})
+    }
 
     return (
         <form onSubmit={onSubmit}>

@@ -18,7 +18,7 @@ function Navbar() {
                     <Link href={'/recipes'}>My Recipes</Link>
                 </li>
                 <li>
-                    <Link href={'/ingredients'}>Search by Ingredients</Link>
+                    <Link href={'/search'}>Search by Ingredients</Link>
                 </li>
                 <li>
                     <Link href={'/'}><Image className={'w-12'}
@@ -30,7 +30,7 @@ function Navbar() {
                     <Link href={'/settings'}>Profile</Link>
                 </li>
                 <li>
-                    <Link href={'/categories'}>My Ingredients</Link>
+                    <Link href={'/ingredients'}>My Ingredients</Link>
                 </li>
 
             </ul>

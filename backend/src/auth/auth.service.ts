@@ -1,4 +1,3 @@
-
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { UsersService } from '../API/users/users.service';
 import { JwtService } from '@nestjs/jwt';
@@ -7,7 +6,7 @@ import { JwtService } from '@nestjs/jwt';
 export class AuthService {
   constructor(
     private usersService: UsersService,
-    private jwtService: JwtService
+    private jwtService: JwtService,
   ) {}
 
   async signIn(
@@ -16,14 +15,17 @@ export class AuthService {
   ): Promise<{ access_token: string }> {
     console.log('Username:', username);
     console.log('Password:', password);
+    const users = await this.usersService.findAll();
+    console.log('Users:', users);
     const user = await this.usersService.findOne(username);
-    if (user?.password != password) {
-      console.log('User not found', user.username);
+    console.log('User:', user);
+    if (user && user.password === password) {
+      const payload = { username: user.username };
+      return {
+        access_token: this.jwtService.sign(payload),
+      };
+    } else {
       throw new UnauthorizedException();
     }
-    const payload = { username: user.username };
-    return {
-      access_token: await this.jwtService.signAsync(payload),
-    };
   }
 }

@@ -12,7 +12,6 @@ const categories = [
     'Grains',
     'Spices',
     'Herbs',
-    'Legumes',
     'Nuts',
 ]
 

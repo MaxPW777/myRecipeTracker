@@ -1,21 +1,40 @@
 "use client"
 import './login.css'
+import {useLoginMutation} from "@/src/services/authentication";
 
 function LoginForm() {
+    const loginMutation = useLoginMutation()
+
     const onSubmit = () => {
+        loginUser({username: "admin", password: "admin"}).then(() => {
+            console.log("logged")
+        })
         console.log("logged")
     }
+
+    const loginUser = async ({username, password}: {
+        username: string,
+        password: string
+    }) => {
+        const response = await loginMutation.mutateAsync({
+            username, password
+        }).then((response) => {
+            console.log(response)
+            localStorage.setItem("token", response[access_token])
+        })
+    };
+
     return (
-        <form className={'flex'} action={onSubmit}>
-            <input type={"file"}
-                   className={'aspect-square h-1/3 rounded-full bg-secondarybg border-border border flex items-center justify-center'}>
-            </input>
-            <div className={'flex flex-col gap-4'}>
-                <input placeholder={'Username'} type="text"/>
-                <input placeholder={'Email'} type="email"/>
-                <input placeholder={'Password'} type="password"/>
-                <input className={'w-min'} type="submit"/>
-            </div>
+        <form onSubmit={onSubmit}>
+            <label>
+                Username:
+                <input type="text" name="username"/>
+            </label>
+            <label>
+                Password:
+                <input type="password" name="password"/>
+            </label>
+            <button type="submit">Login</button>
         </form>
     )
 }

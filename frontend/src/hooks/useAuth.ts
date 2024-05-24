@@ -6,7 +6,7 @@ const useAuth = () => {
     const router = useRouter();
 
     useEffect(() => {
-        const accessToken = localStorage.getItem('accessToken');
+        const accessToken = localStorage.getItem('token');
         if (!accessToken) {
             router.push('/login'); // Redirect to login page if not authenticated
         } else {

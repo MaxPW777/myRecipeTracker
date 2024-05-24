@@ -5,8 +5,9 @@ const BASE_URL = 'http://localhost:4000/auth';
 export const useLoginMutation = () => {
     return useMutation(login, {
         onSuccess: (data) => {
-            localStorage.setItem('token', data.access_token as string);
-        },
+            // @ts-ignore access token will always be a string
+            localStorage.setItem('token', data.access_token);
+            window.location.href = '/';      },
     });
 }
 

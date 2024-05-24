@@ -1,7 +1,11 @@
+'use client'
 import React from 'react'
 import CategoryItem from "./components/RecipeItem";
+import useAuth from "@/src/hooks/useAuth";
 
 function RecipePage() {
+    const isAuth = useAuth();
+    if (!isAuth) return null;
     return (
         <main className={'flex justify-center items-center'}>
             <div

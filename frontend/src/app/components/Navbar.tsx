@@ -1,17 +1,10 @@
 "use client"
-// If you're using Next.js, ensure to import Link from 'next/link'
 import Link from 'next/link';
 import Image from "next/image";
 import useIsMobile from '@/src/hooks/useIsMobile'
 
 function Navbar() {
     const isMobile = useIsMobile();
-    const links = [
-        ['My Recipes', '/recipes'],
-        ['My Ingredients', '/ingredients'],
-        ['Settings', '/settings'],
-        ['Categories', '/categories'],
-    ];
 
     if (isMobile) {
         return (<nav className='rounded-full w-14 h-14 border-2 border-accent ml-auto'>
@@ -25,7 +18,7 @@ function Navbar() {
                     <Link href={'/recipes'}>My Recipes</Link>
                 </li>
                 <li>
-                    <Link href={'/ingredients'}>My Ingredients</Link>
+                    <Link href={'/ingredients'}>Search by Ingredients</Link>
                 </li>
                 <li>
                     <Link href={'/'}><Image className={'w-12'}
@@ -34,10 +27,10 @@ function Navbar() {
                                                     alt={'logo'}/></Link>
                 </li>
                 <li>
-                    <Link href={'/settings'}>Settings</Link>
+                    <Link href={'/settings'}>Profile</Link>
                 </li>
                 <li>
-                    <Link href={'/categories'}>Categories</Link>
+                    <Link href={'/categories'}>My Ingredients</Link>
                 </li>
 
             </ul>

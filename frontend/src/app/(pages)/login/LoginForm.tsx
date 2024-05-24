@@ -16,11 +16,8 @@ function LoginForm() {
         username: string,
         password: string
     }) => {
-        const response = await loginMutation.mutateAsync({
+        await loginMutation.mutateAsync({
             username, password
-        }).then((response) => {
-            console.log(response)
-            localStorage.setItem("token", response[access_token])
         })
     };
 

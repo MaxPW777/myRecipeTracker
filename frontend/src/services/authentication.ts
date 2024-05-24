@@ -3,7 +3,11 @@ import {useMutation} from "react-query";
 const BASE_URL = 'http://localhost:4000/auth';
 
 export const useLoginMutation = () => {
-    return useMutation(login);
+    return useMutation(login, {
+        onSuccess: (data) => {
+            localStorage.setItem('token', data.access_token as string);
+        },
+    });
 }
 
 const login = async ({username, password}: {

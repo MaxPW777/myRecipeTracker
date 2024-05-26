@@ -1,11 +1,12 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ObjectId } from 'mongoose';
+import IUser from '@packages/types/IUser';
 
 @Schema({
   timestamps: true,
   collection: 'Users',
 })
-export class Users {
+export class Users implements IUser {
   @Prop()
   username: string;
 

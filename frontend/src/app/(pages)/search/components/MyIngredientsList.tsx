@@ -8,7 +8,7 @@ interface MyIngredientsListProps {
 
 function MyIngredientsList({ selectedIngredients, removeSelectedIngredient }: MyIngredientsListProps) {
   return (
-    <div className='main-block w-1/4 flex flex-col'>
+    <div className='main-block w-full md:w-1/4 flex flex-col'>
       <h1 className='text-center py-5'>My List</h1>
       <ul className={' overflow-y-auto'}>
         {selectedIngredients.map((ingredient) => (

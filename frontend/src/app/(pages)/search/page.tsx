@@ -25,7 +25,7 @@ function IngredientsPage() {
     }
 
     return (
-        <main className={'justify-center items-center gap-4 flex'}>
+        <main className={'md:justify-center items-center gap-4 flex flex-col md:flex-row'}>
             <IngredientCategories
                 selectedCategory={selectedCategory}
                 setSelectedCategory={setSelectedCategory}

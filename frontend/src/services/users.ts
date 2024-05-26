@@ -1,4 +1,4 @@
-import User from  '../types/User';
+import IUser from  '@packages/types/IUser';
 import {useMutation, useQuery, useQueryClient} from 'react-query';
 
 interface Users {
@@ -19,7 +19,7 @@ export const useGetAllUsersQuery = () => {
     })
 }
 
-const getAllUsers = async (): Promise<User[]> => {
+const getAllUsers = async (): Promise<IUser[]> => {
     const response = await fetch(BASE_URL);
     return response.json();
 };
@@ -31,7 +31,7 @@ export const useGetUserByIdQuery = (id: string) => {
     })
 }
 
-const getUserById = async (id: string): Promise<User> => {
+const getUserById = async (id: string): Promise<IUser> => {
     const response = await fetch(`${BASE_URL}/${id}`);
     return response.json();
 }
@@ -45,7 +45,7 @@ export const useCreateUserMutation = () => {
     })
 }
 
-const createUser = async (user: User): Promise<User> => {
+const createUser = async (user: IUser): Promise<IUser> => {
     const response = await fetch(BASE_URL, {
         method: 'POST',
         headers: {
@@ -67,8 +67,8 @@ export const useUpdateUserMutation = () => {
 
 const updateUser = async ({id, user}: {
     id: string,
-    user: User
-}): Promise<User> => {
+    user: IUser
+}): Promise<IUser> => {
     const response = await fetch(`${BASE_URL}/${id}`, {
         method: 'PATCH',
         headers: {
@@ -88,7 +88,7 @@ export const useDeleteUserMutation = () => {
     })
 }
 
-const deleteUser = async (id: string): Promise<User> => {
+const deleteUser = async (id: string): Promise<IUser> => {
     const response = await fetch(`${BASE_URL}/${id}`, {
         method: 'DELETE',
     });

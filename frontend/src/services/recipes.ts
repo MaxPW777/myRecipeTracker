@@ -1,4 +1,4 @@
-import Recipe from '@/src/types/Recipe';
+import IRecipe from '@packages/types/IRecipe';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 
 const BASE_URL = 'http://localhost:4000/recipes';
@@ -14,7 +14,7 @@ export const useCreateRecipeMutation = ( ) => {
 
 
 
-const createRecipe = async (recipe : Recipe) : Promise<Recipe> => {
+const createRecipe = async (recipe : IRecipe) : Promise<IRecipe> => {
     const response = await fetch(BASE_URL, {
         method: 'POST',
         headers: {
@@ -32,7 +32,7 @@ export const useGetRecipeByIdQuery = (id: string) => {
     });
 };
 
-const getRecipeById = async (id: string) : Promise<Recipe> => {
+const getRecipeById = async (id: string) : Promise<IRecipe> => {
     const response = await fetch(`${BASE_URL}/${id}`);
     return response.json();
 }
@@ -47,7 +47,7 @@ export const useGetRecipesByAuthorQuery = (authorid: string) => {
 
 
 
-const getRecipesByAuthor = async (authorid: string) : Promise<Recipe[] | {message : string, statusCode : number}> => {
+const getRecipesByAuthor = async (authorid: string) : Promise<IRecipe[] | {message : string, statusCode : number}> => {
     const response = await fetch(`${BASE_URL}/author/${authorid}`);
     return response.json();
 }

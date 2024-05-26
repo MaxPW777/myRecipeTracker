@@ -1,4 +1,3 @@
-"use client"
 // Custom hook to check for mobile device
 import { useState, useEffect } from "react";
 

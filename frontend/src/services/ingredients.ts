@@ -1,4 +1,4 @@
-import Ingredient from '../types/Ingredient'; ;
+import IIngredient from '@packages/types/IIngredients'; ;
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 
 const BASE_URL = 'http://localhost:4000/ingredients';
@@ -10,7 +10,7 @@ export const useGetAllIngredientsQuery = () => {
     })
 }
 
-const getAllIngredients = async () : Promise<Ingredient[]> => {
+const getAllIngredients = async () : Promise<IIngredient[]> => {
     try {
         const response = await fetch(BASE_URL);
         return response.json();
@@ -26,7 +26,7 @@ export const useGetIngredientByIdQuery = (id: string) => {
     });
 };
 
-const getIngredientById = async (id: string) : Promise<Ingredient> => {
+const getIngredientById = async (id: string) : Promise<IIngredient> => {
     try{
         const response = await fetch(`${BASE_URL}/${id}`);
         return response.json();
@@ -42,7 +42,7 @@ export const useGetIngredientsByCategoryQuery = (category: string) => {
     });
 };
 
-const getIngredientsByCategory = async (category: string) : Promise<Ingredient[]> => {
+const getIngredientsByCategory = async (category: string) : Promise<IIngredient[]> => {
     try {
         const response = await fetch(`${BASE_URL}/category/${category}`);
         return response.json();
@@ -60,7 +60,7 @@ export const useCreateIngredientMutation = ( ) => {
     });
 }
 
-const createIngredient = async (ingredient: Ingredient) : Promise<Ingredient> => {
+const createIngredient = async (ingredient: IIngredient) : Promise<IIngredient> => {
     try {
         const response = await fetch(BASE_URL, {
             method: 'POST',

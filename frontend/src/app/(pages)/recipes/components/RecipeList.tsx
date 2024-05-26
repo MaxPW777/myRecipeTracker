@@ -1,5 +1,5 @@
 "use client"
-import IRecipe from "@/src/types/Recipe";
+import IRecipe from "@packages/types/IRecipe"
 import CategoryItem from "@/src/app/(pages)/recipes/components/RecipeItem";
 import ErrorModule from "@/src/app/components/ErrorModule";
 import React from "react";

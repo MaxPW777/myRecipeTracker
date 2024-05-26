@@ -9,7 +9,7 @@ function HomePage() {
                 <div className={'h-full w-full border rounded'}>
                 </div>
             </div>
-            <RecipeList data={{message : "test" , statusCode:2304}}/>
+            <RecipeList data={{message : "test", statusCode:2304}}/>
         </main>
     )
 }

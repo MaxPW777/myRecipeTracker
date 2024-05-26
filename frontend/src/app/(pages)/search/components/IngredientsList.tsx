@@ -22,7 +22,7 @@ function IngredientsList({ category, setSelectedIngredients, selectedIngredients
   const { data: ingredients } = useGetIngredientsByCategoryQuery(category as string);
 
   return (
-    <div className='main-block p-3 flex flex-wrap gap-4'>
+    <div className='main-block p-3 flex flex-wrap gap-4 overflow-y-auto min-h-[30rem]'>
       {ingredients && ingredients.map((ingredient) => {
         let isSelected = false;
         if (selectedIngredients){

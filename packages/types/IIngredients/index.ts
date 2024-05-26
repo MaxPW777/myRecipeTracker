@@ -1,5 +1,7 @@
+import {ObjectId} from "mongoose";
+
 export default interface IIngredients {
-    id : string,
+    id : ObjectId,
     name : string,
     category : string,
     image : string,

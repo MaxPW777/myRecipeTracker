@@ -1,11 +1,11 @@
-import Ingredient from "../IIngredients";
+import {ObjectId} from "mongoose";
 
 export default interface IRecipe {
-  _id: string;
+  _id: ObjectId;
   title: string;
-  author: string;
+  author: ObjectId;
   ingredients: {
-    ingredient: Ingredient;
+    ingredientId: ObjectId;
     quantity: string;
     optional?: string;
   }[];

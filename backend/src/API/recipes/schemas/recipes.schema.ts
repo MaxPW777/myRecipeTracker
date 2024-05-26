@@ -1,12 +1,17 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { ObjectId } from 'mongoose';
 import * as mongoose from 'mongoose';
+import { ObjectId } from 'mongoose';
+import IRecipe from '@packages/types/IRecipe';
 
 @Schema({
+  _id: true,
   timestamps: true,
   collection: 'Recipes',
 })
-export class Recipes {
+export class Recipes implements IRecipe {
+  @Prop()
+  _id: ObjectId;
+
   @Prop({ required: true })
   title: string;
 

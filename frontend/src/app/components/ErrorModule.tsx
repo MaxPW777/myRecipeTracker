@@ -1,8 +1,7 @@
+import INestError from "@packages/types/IError";
+
 interface ErrorModuleProps {
-    error: {
-        statusCode: number
-        message: string
-    }
+    error: INestError
 }
 
 function ErrorModule({error}: ErrorModuleProps) {

@@ -1,4 +1,4 @@
-import Ingredient from "./Ingredient";
+import Ingredient from "../IIngredients";
 
 export default interface IRecipe {
   _id: string;

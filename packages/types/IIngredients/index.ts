@@ -1,4 +1,4 @@
-export default interface Ingredient {
+export default interface IIngredients {
     id : string,
     name : string,
     category : string,

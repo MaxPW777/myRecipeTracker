@@ -1,9 +1,9 @@
 "use client";
-import { useCreateUserMutation, useGetAllUsersQuery } from '@/src/services/users';
+import {useCreateUserMutation, useGetAllUsersQuery} from '@/src/services/users';
 import './register.css';
 import User from '@packages/types/IUser';
 
-import { FormEvent, useState } from 'react';
+import {FormEvent, useState} from 'react';
 
 
 function RegisterForm() {
@@ -82,7 +82,7 @@ function RegisterForm() {
             console.error('Error creating user:', error);
         }
     };
-    
+
 
     var regexMail = new RegExp ('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$');
     var regexPassword = new RegExp ('^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!@#$%^&*()_+[\\]{}|;:,.<>?]).{8,}$');

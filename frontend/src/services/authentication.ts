@@ -37,3 +37,22 @@ const getProfile = async () => {
     });
     return response.json();
 }
+
+export const useRegisterMutation = () => {
+    return useMutation(register);
+}
+
+const register = async ({username, email, password}: {
+    username: string,
+    email: string,
+    password: string
+}): Promise<Response> => {
+    const response = await fetch(`${BASE_URL}/register`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({username, email, password}),
+    });
+    return response.json();
+}

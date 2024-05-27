@@ -1,7 +1,6 @@
 import { ObjectId } from 'mongoose';
 
 export class CreateRecipesDto {
-  _id: ObjectId;
   title: string;
   author: ObjectId;
   ingredients: {
@@ -13,5 +12,6 @@ export class CreateRecipesDto {
     partNumber: number;
     instructions: string;
   }[];
+    image: string;
   tags: string[];
 }

@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { useGetAllUsersQuery } from '@/src/services/users';
+import {useGetAllUsersQuery} from '@/src/services/users';
 
 function AllUsers() {
     const { data: users, isLoading, isError } = useGetAllUsersQuery();

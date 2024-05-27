@@ -9,9 +9,6 @@ import IRecipe from '@packages/types/IRecipe';
   collection: 'Recipes',
 })
 export class Recipes implements IRecipe {
-  @Prop({ type: mongoose.Schema.Types.ObjectId })
-  _id: ObjectId;
-
   @Prop({ required: true })
   title: string;
 
@@ -33,6 +30,9 @@ export class Recipes implements IRecipe {
 
   @Prop()
   tags: string[];
+
+    @Prop()
+    image: string;
 }
 
 export const RecipesSchema = SchemaFactory.createForClass(Recipes);

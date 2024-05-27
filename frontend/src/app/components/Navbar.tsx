@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from "next/image";
 import useIsMobile from '@/src/hooks/useIsMobile'
-import { useState } from 'react';
+import {useState} from 'react';
 
 function Navbar() {
     const isMobile = useIsMobile();

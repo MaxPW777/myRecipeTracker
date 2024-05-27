@@ -1,7 +1,6 @@
 import {ObjectId} from "mongoose";
 
 export default interface IRecipe {
-  _id: ObjectId;
   title: string;
   author: ObjectId;
   ingredients: {
@@ -13,5 +12,6 @@ export default interface IRecipe {
     partNumber: number;
     instructions: string;
   }[];
+  image: string;
   tags: string[];
 }

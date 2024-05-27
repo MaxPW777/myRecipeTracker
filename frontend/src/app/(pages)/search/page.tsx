@@ -1,8 +1,10 @@
 "use client"
 
-import IngredientCategories from "@/src/app/(pages)/search/components/IngredientCategories";
-import { useState } from "react";
-import IngredientList from "@/src/app/(pages)/search/components/IngredientsList";
+import IngredientCategories
+    from "@/src/app/(pages)/search/components/IngredientCategories";
+import {useState} from "react";
+import IngredientList
+    from "@/src/app/(pages)/search/components/IngredientsList";
 import MyIngredientsList from "./components/MyIngredientsList";
 
 function IngredientsPage() {

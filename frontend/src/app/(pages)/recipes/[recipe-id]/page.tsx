@@ -26,7 +26,7 @@ function RecipePage() {
                 className="row-span-2 col-start-1 row-start-2 border p-3 flex flex-col">
                 <h2 className={'text-4xl mb-4'}>Ingredients</h2>
                 <ul className={'flex flex-col flex-wrap gap-5 h-full w-full'}>
-                    {data ? data?.ingredients.map((ingredient, index) => (
+                    {data ? data?.ingredients.map((ingredient : any, index : number) => (
                         <li key={index}
                             className={'text-2xl'}>{ingredient.quantity} {ingredient.optional ? '(optional)' : ''}</li>
                     )) : null}
@@ -37,7 +37,7 @@ function RecipePage() {
                 className="row-span-3 col-start-2 row-start-1 border flex flex-col p-3">
                 <h2 className={'text-4xl p-2'}>Preparation</h2>
                 <div className={'overflow-y-auto flex flex-col gap-5 h-full'}>
-                    {data && data?.recipeParts.map((part, index) => (
+                    {data && data?.recipeParts.map((part : any, index: number) => (
                         <div key={index}>
                             <h2 className={'text-2xl'}>Part {part.partNumber}</h2>
                             <p className={'text-lg'}>{part.instructions}</p>

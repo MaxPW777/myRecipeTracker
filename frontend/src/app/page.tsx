@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import RecipeList from "./(pages)/recipes/components/RecipeList";
+
 function HomePage() {
     return (
         <main className={'justify-center items-center gap-4 flex flex-col md:flex-row'}>

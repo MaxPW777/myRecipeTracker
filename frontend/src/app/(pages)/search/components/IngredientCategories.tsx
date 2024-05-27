@@ -1,5 +1,4 @@
 "use client"
-import {useState} from "react";
 import {twMerge} from "tailwind-merge";
 import Link from "next/link";
 
@@ -24,7 +23,7 @@ function IngredientCategorie( {selectedCategory, setSelectedCategory}: Ingredien
     return (
         <div className={'main-block md:w-1/2 flex flex-col p-3 gap-5'}>
             <h1>Ingredient Categories</h1>
-            <ul className={'p-2 flex flex-col gap-3 h-full overflow-y-auto'}>
+            <ul className={'p-2 flex flex-col gap-3 h-full transition-all overflow-y-auto'}>
                 <Link href={'#'}>All</Link>
                 {categories.map((category) => (
                     <Link href={`?${category}`}

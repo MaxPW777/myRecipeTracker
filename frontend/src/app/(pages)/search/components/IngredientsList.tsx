@@ -1,6 +1,6 @@
-import { useGetIngredientsByCategoryQuery } from '@/src/services/ingredients';
+import {useGetIngredientsByCategoryQuery} from '@/src/services/ingredients';
 import React from 'react';
-import { twMerge } from 'tailwind-merge';
+import {twMerge} from 'tailwind-merge';
 
 interface IngredientsListProps {
   category: string | null;
@@ -31,7 +31,7 @@ function IngredientsList({ category, setSelectedIngredients, selectedIngredients
         return (
           <img
             key={ingredient.id}
-            className={twMerge('w-44 h-44', isSelected && 'border-4 border-accent opacity-50')} // Apply a different class if selected
+            className={twMerge('w-44 h-44 transition-all', isSelected && 'border-4 border-accent opacity-50')} // Apply a different class if selected
             data-name={ingredient.name}
             src={ingredient.image}
             onClick={(event) => addIngredient(event, setSelectedIngredients)}

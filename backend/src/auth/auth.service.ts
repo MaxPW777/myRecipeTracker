@@ -13,12 +13,7 @@ export class AuthService {
     username: string,
     password: string,
   ): Promise<{ access_token: string }> {
-    console.log('Username:', username);
-    console.log('Password:', password);
-    const users = await this.usersService.findAll();
-    console.log('Users:', users);
     const user = await this.usersService.findOne(username);
-    console.log('User:', user);
     if (user && user.password === password) {
       const payload = { username: user.username };
       return {

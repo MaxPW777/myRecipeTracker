@@ -14,7 +14,7 @@ import { UsersService } from './users.service';
 import { Users } from './schemas/users.schema';
 import { CreateUsersDto } from './dto/create-users.dto';
 import { UpdateUsersDto } from './dto/update-users.dto';
-import mongoose, { ObjectId } from 'mongoose';
+import mongoose from 'mongoose';
 
 @Controller('users')
 export class UsersController {

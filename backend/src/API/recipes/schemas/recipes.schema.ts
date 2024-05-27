@@ -9,7 +9,7 @@ import IRecipe from '@packages/types/IRecipe';
   collection: 'Recipes',
 })
 export class Recipes implements IRecipe {
-  @Prop()
+  @Prop({ type: mongoose.Schema.Types.ObjectId })
   _id: ObjectId;
 
   @Prop({ required: true })

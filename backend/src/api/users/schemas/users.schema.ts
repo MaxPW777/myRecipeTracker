@@ -8,6 +8,9 @@ import IUser from '@packages/types/IUser';
 })
 export class Users implements IUser {
   @Prop()
+  id: string;
+
+  @Prop()
   username: string;
 
   @Prop({ required: true })

@@ -7,6 +7,10 @@ export class UpdateUsersDto {
   username?: string;
 
   @IsOptional()
+  @IsString()
+  email?: string;
+
+  @IsOptional()
   favoriteRecipes?: ObjectId[];
 
   @IsOptional()

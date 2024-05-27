@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Users } from './schemas/users.schema';
 import { UpdateUsersDto } from './dto/update-users.dto';
+import {CreateUsersDto} from "@/src/API/users/dto/create-users.dto";
 
 @Injectable()
 export class UsersService {
@@ -26,7 +27,7 @@ export class UsersService {
     return user;
   }
 
-  async create(user: Users): Promise<Users> {
+  async create(user: CreateUsersDto): Promise<Users> {
     const res = await this.userModel.create(user);
     return res;
   }

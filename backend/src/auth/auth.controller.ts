@@ -32,4 +32,11 @@ export class AuthController {
     this.logger.debug(`Fetching profile for user: ${req.user.username}`);
     return req.user;
   }
+
+    @HttpCode(HttpStatus.CREATED)
+    @Post('register')
+    async signUp(@Body() signInDto: SignInDto) {
+      this.logger.debug(`Received register request for username: ${signInDto.username}`);
+      return this.authService.signUp(signInDto.email, signInDto.username, signInDto.password);
+    }
 }

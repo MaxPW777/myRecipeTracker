@@ -11,9 +11,9 @@ interface RecipeListProps {
 export default function RecipeList({data}: RecipeListProps) {
     return (
         'length' in data ?
-            data.map((recipe: IRecipe) => (
-                <CategoryItem key={recipe._id}
-                              ImageSource={'/tiramisu.jpg'}
+            data.map((recipe: IRecipe, index: number) => (
+                <CategoryItem key={index}
+                              ImageSource={"/"+recipe.image}
                               RecipeTitle={recipe.title}
                               RecipeID={recipe._id}/>
             )) :

@@ -13,7 +13,7 @@ export default function RecipeList({data}: RecipeListProps) {
         'length' in data ?
             data.map((recipe: IRecipe, index: number) => (
                 <CategoryItem key={index}
-                              ImageSource={"/"+recipe.image}
+                              ImageSource={recipe.image}
                               RecipeTitle={recipe.title}
                               RecipeID={recipe._id}/>
             )) :

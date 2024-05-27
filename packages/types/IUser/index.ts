@@ -1,10 +1,10 @@
 import {ObjectId} from "mongoose";
 
 export default interface IUser {
-    id?: string;
+    id: string;
     username?: string;
-    email?: string;
+    email: string;
     favoriteRecipes?: ObjectId[];
-    password?: string;
+    password: string;
     myRecipes?: ObjectId[];
 }

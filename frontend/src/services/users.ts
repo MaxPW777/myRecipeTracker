@@ -1,4 +1,4 @@
-import IUser from  '@packages/types/IUser';
+import IUser from '@packages/types/IUser';
 import {useMutation, useQuery, useQueryClient} from 'react-query';
 
 interface Users {
@@ -67,7 +67,13 @@ export const useUpdateUserMutation = () => {
 
 const updateUser = async ({id, user}: {
     id: string,
-    user: IUser
+    user: {
+        username?: string;
+        email?: string;
+        favoriteRecipes?: string[];
+        password?: string;
+        myRecipes?: string[];
+    }
 }): Promise<IUser> => {
     const response = await fetch(`${BASE_URL}/${id}`, {
         method: 'PATCH',
@@ -81,7 +87,7 @@ const updateUser = async ({id, user}: {
 
 export const useDeleteUserMutation = () => {
     const queryClient = useQueryClient();
-    return useMutation( deleteUser, {
+    return useMutation(deleteUser, {
         onSuccess: () => {
             queryClient.invalidateQueries('users')
         }

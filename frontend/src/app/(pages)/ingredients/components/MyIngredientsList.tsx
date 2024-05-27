@@ -8,7 +8,7 @@ interface MyIngredientsListProps {
 
 function MyIngredientsList({ selectedIngredients, removeSelectedIngredient }: MyIngredientsListProps) {
   return (
-    <div className='main-block w-1/4'>
+    <div className='main-block w-1/4 overflow-y-auto'>
       <h1 className='text-center py-5'>My List</h1>
       <ul>
         {selectedIngredients.map((ingredient) => (
@@ -17,6 +17,7 @@ function MyIngredientsList({ selectedIngredients, removeSelectedIngredient }: My
           </li>
         ))}
       </ul>
+      <button className='text-center w-full bg-accent '>Search Recipe</button>
     </div>
   );
 }

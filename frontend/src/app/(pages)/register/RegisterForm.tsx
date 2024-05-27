@@ -1,7 +1,7 @@
 "use client";
 import { useCreateUserMutation, useGetAllUsersQuery } from '@/src/services/users';
 import './register.css';
-import User from '@/src/types/User';
+import User from '@packages/types/IUser';
 
 import { FormEvent, useState } from 'react';
 

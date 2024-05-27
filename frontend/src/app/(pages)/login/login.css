@@ -1,7 +1,15 @@
-input{
-    @apply p-3 border-2 border-accent text-xl rounded bg-transparent;
+.form {
+    @apply flex flex-col gap-4 mx-auto p-6 text-white rounded-lg ;
 }
 
-input:focus{
-    @apply border-amber-600
+label {
+    @apply flex flex-col text-sm;
+}
+
+input {
+    @apply mt-1 p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+button {
+    @apply mt-4 p-2 bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500;
 }

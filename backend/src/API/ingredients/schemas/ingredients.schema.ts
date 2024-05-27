@@ -7,6 +7,7 @@ import { ObjectId } from 'mongoose';
   collection: 'Ingredients',
 })
 export class Ingredients implements IIngredients {
+  @Prop()
   id: ObjectId;
   @Prop({ required: true })
   name: string;

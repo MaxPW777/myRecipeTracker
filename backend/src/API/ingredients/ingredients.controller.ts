@@ -2,9 +2,9 @@ import {
   Body,
   Controller,
   Get,
-  Post,
-  Param,
   HttpException,
+  Param,
+  Post,
 } from '@nestjs/common';
 import { IngredientsService } from './ingredients.service';
 import { Ingredients } from './schemas/ingredients.schema';
@@ -34,7 +34,9 @@ export class IngredientsController {
   }
 
   @Get('category/:category')
-  async getIngredientsByCategory(@Param('category') category: string): Promise<Ingredients[]> {
+  async getIngredientsByCategory(
+    @Param('category') category: string,
+  ): Promise<Ingredients[]> {
     const ingredients = await this.ingredientsService.findByCategory(category);
     if (!ingredients) {
       throw new HttpException('Category not found', 404);

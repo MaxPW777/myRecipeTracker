@@ -1,6 +1,6 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { InjectModel, InjectConnection } from '@nestjs/mongoose';
-import { Model, Connection, ObjectId } from 'mongoose';
+import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 import { Users } from './schemas/users.schema';
 import { UpdateUsersDto } from './dto/update-users.dto';
 
@@ -45,5 +45,4 @@ export class UsersService {
     const res = await this.userModel.findByIdAndDelete(id);
     return res;
   }
-  
 }

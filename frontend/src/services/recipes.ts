@@ -1,5 +1,6 @@
 import IRecipe from '@packages/types/IRecipe';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
+import INestError from "@packages/types/IError";
 
 const BASE_URL = 'http://localhost:4000/recipes';
 
@@ -47,7 +48,7 @@ export const useGetRecipesByAuthorQuery = (authorid: string) => {
 
 
 
-const getRecipesByAuthor = async (authorid: string) : Promise<IRecipe[] | {message : string, statusCode : number}> => {
+const getRecipesByAuthor = async (authorid: string) : Promise<IRecipe[] | INestError> => {
     const response = await fetch(`${BASE_URL}/author/${authorid}`);
     return response.json();
 }

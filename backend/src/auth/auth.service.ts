@@ -20,6 +20,7 @@ export class AuthService {
         access_token: this.jwtService.sign(payload),
       };
     } else {
+      console.log('no user or password mismatch');
       throw new UnauthorizedException();
     }
   }

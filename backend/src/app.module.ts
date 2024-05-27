@@ -15,7 +15,7 @@ require('dotenv').config();
     RecipesModule,
     IngredientsModule,
     AuthModule,
-  ], 
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

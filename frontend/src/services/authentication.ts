@@ -42,7 +42,7 @@ const register = async ({username, email, password}: {
     username: string,
     email: string,
     password: string
-}): Promise<Response> => {
+}): Promise<{access_token : string} | INestError> => {
     const response = await fetch(`${BASE_URL}/register`, {
         method: 'POST',
         headers: {

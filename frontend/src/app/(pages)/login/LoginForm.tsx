@@ -52,6 +52,11 @@ function LoginForm() {
         window.location.href = '/';
     }
 
+    if (registerMutation.data && "access_token" in registerMutation.data){
+        localStorage.setItem('token', registerMutation.data.access_token);
+        window.location.href = '/';
+    }
+
     return (
         <div
             className="flex flex-col items-center justify-center text-white">

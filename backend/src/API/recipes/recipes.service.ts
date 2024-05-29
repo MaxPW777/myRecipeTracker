@@ -11,22 +11,18 @@ export class RecipesService {
   ) {}
 
   async findAll(): Promise<Recipes[]> {
-    const recipes = await this.recipeModel.find();
-    return recipes;
+    return await this.recipeModel.find();
   }
 
   async findById(id: string): Promise<Recipes> {
-    const recipe = await this.recipeModel.findById(id);
-    return recipe;
+    return await this.recipeModel.findById(id);
   }
 
   async create(recipe: Recipes): Promise<Recipes> {
-    const res = await this.recipeModel.create(recipe);
-    return res;
+    return await this.recipeModel.create(recipe);
   }
 
   async findByAuthor(authorid: string): Promise<Recipes[]> {
-    const recipes = await this.recipeModel.find({ author: authorid });
-    return recipes;
+    return await this.recipeModel.find({ author: authorid });
   }
 }

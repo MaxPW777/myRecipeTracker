@@ -15,13 +15,14 @@ import { Users } from './schemas/users.schema';
 import { CreateUsersDto } from './dto/create-users.dto';
 import { UpdateUsersDto } from './dto/update-users.dto';
 import mongoose from 'mongoose';
+import IUser from '@packages/types/IUser';
 
 @Controller('users')
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
   @Get()
-  async getAllUsers(): Promise<Users[]> {
+  async getAllUsers(): Promise<IUser[]> {
     return this.usersService.findAll();
   }
 

@@ -25,17 +25,21 @@ export class AuthService {
     }
   }
 
-    async signUp(email: string, username: string, password: string): Promise<{id:string, access_token: string }> {
-        const user = await this.usersService.create({ email, username, password });
-        if (user) {
-        const payload = { username: user.username };
-        return {
-          id: user._id,
-            access_token: this.jwtService.sign(payload),
-        };
-        } else {
-        console.log('no user or password mismatch');
-        throw new UnauthorizedException();
-        }
+  async signUp(
+    email: string,
+    username: string,
+    password: string,
+  ): Promise<{ id: string; access_token: string }> {
+    const user = await this.usersService.create({ email, username, password });
+    if (user) {
+      const payload = { username: user.username };
+      return {
+        id: user._id,
+        access_token: this.jwtService.sign(payload),
+      };
+    } else {
+      console.log('no user or password mismatch');
+      throw new UnauthorizedException();
     }
+  }
 }

@@ -15,7 +15,7 @@ function HomePage() {
             </div>
             <div className={'main-block p-5 flex flex-col gap-4 '}>
                 <p>Recent Recipes</p>
-                <div className={'h-full w-full border rounded flex flex-wrap text-sm p-5 gap-5 justify-center'}>
+                <div className={'h-full overflow-y-auto w-full border rounded flex flex-wrap text-sm p-5 gap-5 justify-center'}>
                 <RecipeList data={recipes.data}/>
                 </div>
             </div>

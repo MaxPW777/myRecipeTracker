@@ -6,11 +6,14 @@ import {useState} from "react";
 import IngredientList
     from "@/src/app/(pages)/search/components/IngredientsList";
 import MyIngredientsList from "./components/MyIngredientsList";
+import useAuth from "@/src/hooks/useAuth";
 
 function IngredientsPage() {
+    const isAuth = useAuth();
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
     const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
 
+    if (!isAuth) return null;
     const addSelectedIngredient = (ingredient: string) => {
         setSelectedIngredients((prevIngredients) => {
             if (!prevIngredients.includes(ingredient)) {

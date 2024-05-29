@@ -1,20 +1,16 @@
 import {useMutation} from "react-query";
+import INestError from "@packages/types/IError";
 
 const BASE_URL = 'http://localhost:4000/auth';
 
 export const useLoginMutation = () => {
-    return useMutation(login, {
-        onSuccess: (data) => {
-            // @ts-ignore access token will always be a string
-            localStorage.setItem('token', data.access_token);
-            window.location.href = '/';      },
-    });
+    return useMutation(login);
 }
 
 const login = async ({username, password}: {
     username: string,
     password: string
-}): Promise<Response> => {
+}): Promise<{access_token : string} | INestError > => {
     const response = await fetch(`${BASE_URL}/login`, {
         method: 'POST',
         headers: {

@@ -47,9 +47,18 @@ function LoginForm() {
         setIsRegistering(!isRegistering);
     };
 
+    if (loginMutation.data && "access_token" in loginMutation.data){
+        localStorage.setItem('token', loginMutation.data.access_token);
+        window.location.href = '/';
+    }
+
     return (
         <div
             className="flex flex-col items-center justify-center text-white">
+            <p>test user : Username: FroozZ, mdp: motdepasse</p>
+            {loginMutation.data && "message" in loginMutation.data && (
+                <p className={'text-red-700'}>{loginMutation.data.message}</p>
+            )}
             {isRegistering ? (
                 <form onSubmit={onSubmitRegister} className="form">
                     <h2 className="text-xl mb-4">Register</h2>

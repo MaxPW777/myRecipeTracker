@@ -4,10 +4,10 @@
   "description": "Your project description",
   "main": "index.js",
   "scripts": {
-    "build:frontend": "npm run build --prefix frontend",
+    "build": "npm run build --prefix frontend",
     "start:frontend": "npm start --prefix frontend",
     "start:backend": "npm start --prefix backend",
-    "start": "npm install && npm install --prefix frontend && npm install --prefix backend && concurrently \"npm run build:frontend && npm run start:frontend\" \"npm run start:backend\"",
+    "start": "concurrently \"npm run build:frontend && npm run start:frontend\" \"npm run start:backend\"",
     "install:all": "npm install --prefix frontend && npm install --prefix backend"
   },
   "author": "Your Name",

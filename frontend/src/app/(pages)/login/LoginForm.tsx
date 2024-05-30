@@ -47,12 +47,12 @@ function LoginForm() {
         setIsRegistering(!isRegistering);
     };
 
-    if (loginMutation.data && "access_token" in loginMutation.data){
+    if (loginMutation.data && "access_token" in loginMutation.data) {
         localStorage.setItem('token', loginMutation.data.access_token);
         window.location.href = '/';
     }
 
-    if (registerMutation.data && "access_token" in registerMutation.data){
+    if (registerMutation.data && "access_token" in registerMutation.data) {
         localStorage.setItem('token', registerMutation.data.access_token);
         window.location.href = '/';
     }
@@ -101,7 +101,7 @@ function LoginForm() {
                     </label>
                     <button type="submit">Login</button>
                     <p className="mt-4">
-                        Don't have an account?{' '}
+                        Don&apos;t have an account?
                         <button type="button" onClick={toggleForm}
                                 className="text-blue-500 underline">
                             Register

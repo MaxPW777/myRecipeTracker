@@ -19,6 +19,7 @@ export default function RecipeList({data}: RecipeListProps) {
                 <CategoryItem key={index}
                               ImageSource={recipe.image}
                               RecipeTitle={recipe.title}
+                              // @ts-ignore
                               RecipeID={recipe._id}/>
             )) :
             'message' in data ?
